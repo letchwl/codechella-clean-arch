@@ -31,4 +31,17 @@ public class UsuarioTest {
                 () -> new Usuario("123.456.789-99", "Raul", LocalDate.parse("1990-08-20"), "emailemail.com"));
     }
 
+    @Test
+    public void deveCriarUsuarioComFabrica() {
+        FabricaUsuario fabrica = new FabricaUsuario();
+        Usuario usuario = fabrica.comNomeCpfNascimento("Raul", "123.456.789-00",
+                LocalDate.parse("2010-11-05"));
+
+        Assertions.assertEquals("Raul", usuario.getNome());
+
+        usuario = fabrica.incluiEndereco("12345-999", 40, "ap 05");
+
+        Assertions.assertEquals("ap 05", usuario.getEndereco().getComplemento());
+    }
+
 }
