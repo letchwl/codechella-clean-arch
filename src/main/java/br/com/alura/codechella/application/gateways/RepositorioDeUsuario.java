@@ -13,4 +13,6 @@ public interface RepositorioDeUsuario {
 
     Usuario editarUsuario(String cpf, Usuario usuario);
 
+    void deletarUsuario(String cpf);
+
 }

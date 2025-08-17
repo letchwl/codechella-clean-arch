@@ -43,4 +43,10 @@ public class RepositorioDeUsuarioJpa implements RepositorioDeUsuario {
         return null;
     }
 
+    @Override
+    public void deletarUsuario(String cpf) {
+        UsuarioEntity entity = repositorio.findByCpf(cpf);
+        repositorio.delete(entity);
+    }
+
 }
