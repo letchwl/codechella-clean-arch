@@ -33,7 +33,7 @@ public class UsuarioTest {
 
     @Test
     public void deveCriarUsuarioComFabrica() {
-        FabricaUsuario fabrica = new FabricaUsuario();
+        UsuarioBuilder fabrica = new UsuarioBuilder();
         Usuario usuario = fabrica.comNomeCpfNascimento("Raul", "123.456.789-00",
                 LocalDate.parse("2010-11-05"));
 

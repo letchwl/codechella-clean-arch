@@ -4,7 +4,7 @@ import br.com.alura.codechella.domain.Endereco;
 
 import java.time.LocalDate;
 
-public class FabricaUsuario {
+public class UsuarioBuilder {
     private Usuario usuario;
 
     public Usuario comNomeCpfNascimento(String nome, String cpf, LocalDate nascimento) {
