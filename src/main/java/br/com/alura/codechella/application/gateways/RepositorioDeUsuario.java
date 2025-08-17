@@ -8,8 +8,9 @@ import java.util.List;
 public interface RepositorioDeUsuario {
 
     Usuario cadastrarUsuario(Usuario usuario);
-    ;
 
     List<Usuario> listarTodos();
+
+    Usuario editarUsuario(String cpf, Usuario usuario);
 
 }

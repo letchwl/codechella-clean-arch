@@ -30,4 +30,17 @@ public class RepositorioDeUsuarioJpa implements RepositorioDeUsuario {
                .map(u -> mapper.toDomain(u))
                .collect(Collectors.toList());
     }
+
+    @Override
+    public Usuario editarUsuario(String cpf, Usuario usuario) {
+        UsuarioEntity entity = repositorio.findByCpf(cpf);
+        if (entity != null) {
+            var atualizado = mapper.toEntity(usuario);
+            atualizado.setId(entity.getId());
+            repositorio.save(atualizado);
+            return mapper.toDomain(atualizado);
+        }
+        return null;
+    }
+
 }
